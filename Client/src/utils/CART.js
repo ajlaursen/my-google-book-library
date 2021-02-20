@@ -23,6 +23,11 @@ function onRemove(product, cartItems, setCartItems) {
         );
     }
 }
-    
 
-export const cart = { onAdd, onRemove }
+const itemsPrice = (cartItems) => {
+    return cartItems.reduce((a,c) => a + c.price * c.qty, 0)
+}
+
+
+
+export const cart = { onAdd, onRemove, itemsPrice }
